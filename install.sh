@@ -1,14 +1,13 @@
-#!/bin/sh
+#!/bin/zsh
 
 ubin=$HOME/bin
-
 mkdir -p $ubin
-cp bash_* $ubin/
-cp git-completion.bash $ubin/
 
-if [ -f ~/.profile ]; then
-    echo "Backing up ~/.profile => ~/.profile.bkp"
-    mv ~/.profile ~/.profile.bkp
+cp bash_functions.sh $ubin/
+
+if [ -f ~/.zshrc ]; then
+    echo "Backing up ~/.zshrc => ~/.zshrc.bkp"
+    mv -v ~/.zshrc ~/.zshrc.bkp
 fi
 
-cp .profile ~/.profile
+cp zshrc ~/.zshrc
